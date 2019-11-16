@@ -10,8 +10,17 @@ function randomNumber(min, max) {
 // Hours Array
 var hoursArray = ['6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm'];
 
+// Vars for Table-Making
+var table = document.getElementById('cookieTable');
+var thEl = document.createElement('th');
+var tdEl = document.createElement('td');
+var trEl = document.createElement('tr');
+
 // Store Array
 var allStores = [];
+
+// Store Total Cookie Counter
+StoreConstructor.allStoresTotal = 0;
 
 // Store Constructor Function
 function StoreConstructor(storeBranch, minCustomerEachHour, maxCustomerEachHour, avgCookiesPerCustomer){
@@ -67,6 +76,7 @@ StoreConstructor.prototype.hoursTotal = function() {
   for (var i = 0; i < hoursArray.length; i++) {
     var cookieUp = this.cookiesEachHour[i];
     this.totalCookiesForDay += cookieUp;
+    StoreConstructor.allStoresTotal += cookieUp;
   }
   // create cell to hold total cookie data
   var tdEl = document.createElement('td');
@@ -75,13 +85,7 @@ StoreConstructor.prototype.hoursTotal = function() {
   table.appendChild(trEl);
 };
 
-// Vars for Table-Making
-var table = document.getElementById('cookieTable');
-var thEl = document.createElement('th');
-var tdEl = document.createElement('td');
-var trEl = document.createElement('tr');
-
-// Function to Build Total Cookies Header Cell
+// Function to Build Total Cookies Header Cell ONLY
 function totalHeader() {
   thEl = document.createElement('th');
   trEl = document.createElement('tr');
@@ -91,16 +95,31 @@ function totalHeader() {
 }
 
 // Function to build Total Cookies Footer Row
-// KEEP WORKING ON THIS ONE
-// function totalRow(){
-//   for (var i = 0; i < hoursArray.length; i++){
+var totalFooter = function() {
+  // build Totals cell 1
+  trEl = document.createElement('tr');
+  tdEl = document.createElement('td');
+  tdEl.textContent = 'Totals';
+  trEl.appendChild(tdEl);
 
-//   }
-//   thEl = document.createElement('th');
-//   trEh = document.createElement('tr');
-//   thEl.textContent = 'Totals';
-//   trEl.appendChild();
-// }
+  // iterate over hours array horizontally
+  for (var i = 0; i < hoursArray.length; i++){
+    var storeHourTotals = 0;
+    var tdTotals = document.createElement('td');
+
+    // iterate over stores data vertically
+    for (var j = 0; j < allStores.length; j++) {
+      storeHourTotals += allStores[j].cookiesEachHour[i];
+    }
+    tdTotals.textContent = storeHourTotals;
+    trEl.appendChild(tdTotals);
+  }
+  // create FINAL TOTAL TOTAL CELL and populate
+  var tdFinalEl = document.createElement('td');
+  tdFinalEl.textContent = StoreConstructor.allStoresTotal;
+  trEl.appendChild(tdFinalEl);
+  table.appendChild(trEl);
+};
 
 // Function to Build Header with Hours
 function tableHeader() {
@@ -141,11 +160,10 @@ function doStuff() {
   console.log(allStores);
 }
 
-
 // calling functions
 tableHeader();
 totalHeader();
 doStuff();
+totalFooter();
 
-// still need FOOTER
 

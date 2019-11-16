@@ -2,7 +2,7 @@
 // ron rebuilding lab 07 for class
 // this is tied to test.html
 
-console.log('proof of life');
+console.log('proof of life sample constructor');
 // ron begins by figuring out all the elements and stuff he might need before coding begins. lists all elements via comments.
 // he deletes comments as he builds the stuff he outlined at the start
 
@@ -41,7 +41,7 @@ var randomCustomer = function(min, max) {
 
 // generate hourly cookies function
 // ron doing this in a way that we shouldnt be doing
-// counts cookies and adds them to 3 diff plaes
+// counts cookies and adds them to 3 diff places
 CookieShop.prototype.generateHourlyCookies = function() {
   for ( var i = 0; i < CookieShop.hours.length; i++) {
     var cookie = Math.ceil(this.avgCookie * randomCustomer(this.minCust, this.maxCust));
