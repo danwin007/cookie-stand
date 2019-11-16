@@ -1,6 +1,6 @@
 'use strict';
 
-console.log('proof of life');
+console.log('proof of life CONSTRUCTORS');
 
 // Random Number Function
 function randomNumber(min, max) {
