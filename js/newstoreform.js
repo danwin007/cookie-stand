@@ -17,8 +17,7 @@ console.log('proof of life FORMS');
 // inputElementMaxCust
 
 // AVG COOKERS PER CUSTOMER
-// inputElementAvgCookiesPerCust
-// inputElementAvgCookiesPerCust
+// inputElementAvgCookies
 
 // create var that allows us to target form element
 var userForm = document.getElementById('user-form');
@@ -31,16 +30,16 @@ function handleSubmit(e) {
   var storeLoc = e.target.inputElementStoreLoc.value;
   var minCust = e.target.inputElementMinCust.value;
   var maxCust = e.target.inputElementMaxCust.value;
-  var avgCookies = e.target.inputElementAvgCookiesPerCust;
+  var avgCookies = e.target.inputElementAvgCookies.value;
 
   console.log('storeLoc: ', storeLoc);
   console.log('minCust: ', minCust);
   console.log('maxCust: ', maxCust);
   console.log('avgCookies: ', avgCookies);
 
-  // clear fields
+  // clear fields after input
   e.target.inputElementStoreLoc.value = null;
   e.target.inputElementMinCust.value = null;
   e.target.inputElementMaxCust.value = null;
-  e.target.inputElementAvgCookiesPerCust.value = null;
+  e.target.inputElementAvgCookies.value = null;
 }
