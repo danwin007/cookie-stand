@@ -50,26 +50,54 @@ StoreConstructor.prototype.calcCustomers = function() {
   for (var i = 0; i < hoursArray.length; i++){
     var customers = randomNumber(this.minCustomerEachHour, this.maxCustomerEachHour);
     this.customerEachHour.push(customers);
-  }
-};
-
-// COOKIE PER HOUR PROTOTYPE
-StoreConstructor.prototype.calcCookies = function() {
-  for (var i = 0; i <hoursArray.length; i++){
     var cookies = Math.ceil(this.customerEachHour[i] * this.avgCookiesPerCustomer);
     this.cookiesEachHour.push(cookies);
   }
 };
 
+// COOKIE PER HOUR PROTOTYPE
+// StoreConstructor.prototype.calcCookies = function() {
+//   for (var i = 0; i <hoursArray.length; i++){
+//     // var cookies = Math.ceil(this.customerEachHour[i] * this.avgCookiesPerCustomer);
+//     // this.cookiesEachHour.push(cookies);
+//   }
+// };
+// was able to remove the code above by moving it into the calcCustomers prototype
+
+
 // RENDER PROTOTYPE
 StoreConstructor.prototype.render = function() {
+  // this.calcCookies();
+  // was able to remove the code above by moving it into the calcCustomers prototype
   this.calcCustomers();
-  this.calcCookies();
   this.rows();
   this.hoursTotal();
 };
 
-// I figured this one out on the second try! I feel pretty buff!
+// function to populate arrays via allstores array
+function allStoresRender() {
+  for (var i = 0; i < allStores.length; i++) {
+    allStores[i].render();
+  }
+  console.log(allStores);
+}
+
+// Prototype to Populate Rows with Store Content
+StoreConstructor.prototype.rows = function() {
+  //make first header cell
+  thEl = document.createElement('th');
+  trEl = document.createElement('tr');
+  thEl.textContent = this.storeBranch;
+  trEl.appendChild(thEl);
+  //populate data rows
+  for (var i = 0; i < hoursArray.length; i++) {
+    tdEl = document.createElement('td');
+    tdEl.textContent = this.cookiesEachHour[i];
+    trEl.appendChild(tdEl);
+  }
+  table.appendChild(trEl);
+};
+
 // Store Prototype for calculating Total Cookies (per store) for entire day
 StoreConstructor.prototype.hoursTotal = function() {
   // do math to add up all hours to create total figure, put that in total cookie variable
@@ -92,6 +120,21 @@ function totalHeader() {
   thEl.textContent = 'Daily Location Total';
   trEl.appendChild(thEl);
   table.appendChild(thEl);
+}
+
+// Function to Build Header with Hours
+function tableHeader() {
+  thEl = document.createElement('th');
+  trEl = document.createElement('tr');
+  thEl.textContent = '';
+  trEl.appendChild(thEl);
+  table.appendChild(thEl);
+
+  for(var i = 0; i < hoursArray.length; i++) {
+    var thEl = document.createElement('th');
+    thEl.textContent = hoursArray[i];
+    table.appendChild(thEl);
+  }
 }
 
 // Function to build Total Cookies Footer Row
@@ -121,49 +164,54 @@ var totalFooter = function() {
   table.appendChild(trEl);
 };
 
-// Function to Build Header with Hours
-function tableHeader() {
-  thEl = document.createElement('th');
-  trEl = document.createElement('tr');
-  thEl.textContent = '';
-  trEl.appendChild(thEl);
-  table.appendChild(thEl);
-
-  for(var i = 0; i < hoursArray.length; i++) {
-    var thEl = document.createElement('th');
-    thEl.textContent = hoursArray[i];
-    table.appendChild(thEl);
-  }
-}
-
-// Prototype to Populate Rows with Store Content
-StoreConstructor.prototype.rows = function() {
-  //make first header cell
-  thEl = document.createElement('th');
-  trEl = document.createElement('tr');
-  thEl.textContent = this.storeBranch;
-  trEl.appendChild(thEl);
-  //populate data rows
-  for (var i = 0; i < hoursArray.length; i++) {
-    tdEl = document.createElement('td');
-    tdEl.textContent = this.cookiesEachHour[i];
-    trEl.appendChild(tdEl);
-  }
-  table.appendChild(trEl);
-};
-
-// function to populate arrays
-function doStuff() {
-  for (var i = 0; i < allStores.length; i++) {
-    allStores[i].render();
-  }
-  console.log(allStores);
-}
-
 // calling functions
 tableHeader();
 totalHeader();
-doStuff();
+allStoresRender();
 totalFooter();
+
+// FORM CODE FORM CODE FORM CODE FORM CODE FORM CODE FORM CODE
+// create var that allows us to target form element
+var userForm = document.getElementById('user-form');
+
+// create event listener for FORM SUBMIT
+userForm.addEventListener('submit', handleSubmit);
+
+function handleSubmit(e) {
+  e.preventDefault();
+  var storeLoc = e.target.inputElementStoreLoc.value;
+  var minCust = e.target.inputElementMinCust.value;
+  var maxCust = e.target.inputElementMaxCust.value;
+  var avgCookies = e.target.inputElementAvgCookies.value;
+
+  console.log('storeLoc: ', storeLoc);
+  console.log('minCust: ', minCust);
+  console.log('maxCust: ', maxCust);
+  console.log('avgCookies: ', avgCookies);
+
+  // delete totals row / failed attempt
+  // var killRow = document.getElementsById('cookieTable').lastChild;
+  // var tableTarget = killRow.parentNode;
+  // tableTarget.removeChild(killRow);
+
+  var killRowArray = document.getElementsByTagName('tr');
+  var killRow = killRowArray[killRowArray.length - 1];
+  killRow.remove();
+
+  var newStore = new StoreConstructor (storeLoc, minCust, maxCust, avgCookies);
+  newStore.calcCustomers();
+  newStore.rows();
+  newStore.hoursTotal();
+  // remake totals row by calling footer function
+  totalFooter();
+
+  // clear fields after input
+  e.target.inputElementStoreLoc.value = null;
+  e.target.inputElementMinCust.value = null;
+  e.target.inputElementMaxCust.value = null;
+  e.target.inputElementAvgCookies.value = null;
+}
+// FORM CODE FORM CODE FORM CODE FORM CODE FORM CODE FORM CODE
+
 
 

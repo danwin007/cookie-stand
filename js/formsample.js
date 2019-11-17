@@ -16,7 +16,7 @@ function handleSubmit(event) {
   // this log shows us lots of deets about the event and target
   console.log('event.target.inputElementName.value: ', event.target.inputElementName.value);
 
-  alert(`Hello ${name} you are ${age} years old`);
+  // alert(`Hello ${name} you are ${age} years old`);
 
   // these lines below clear the fields after value is submitted
   event.target.inputElementName.value = null;

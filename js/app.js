@@ -1,5 +1,7 @@
 'use strict';
-
+//====================================
+//OLD VERSION OF CODE FROM CLASS 05ISH
+//====================================
 console.log('proof of life');
 
 // code to create random numbers (not the only way)
