@@ -12,3 +12,27 @@ input:invalid {
 input:valid {
   border: 2px solid black;
 }
+
+#header {
+  background-color: lightgrey;
+}
+#storeIntro {
+  text-align: center;
+  padding-top: 30px;
+}
+
+.navLi {
+  display: inline;
+  margin: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#nav {
+  text-align: center;
+}
+
+#topLogo {
+  text-align: center;
+  font-size: 250%;
+}
