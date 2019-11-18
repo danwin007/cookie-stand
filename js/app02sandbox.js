@@ -213,5 +213,6 @@ function handleSubmit(e) {
 }
 // FORM CODE FORM CODE FORM CODE FORM CODE FORM CODE FORM CODE
 
-
+// todo
+// add requirements to input tags on html for form validation
 
