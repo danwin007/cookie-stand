@@ -141,9 +141,9 @@ function tableHeader() {
 var totalFooter = function() {
   // build Totals cell 1
   trEl = document.createElement('tr');
-  tdEl = document.createElement('td');
-  tdEl.textContent = 'Totals';
-  trEl.appendChild(tdEl);
+  thEl = document.createElement('th');
+  thEl.textContent = 'Totals';
+  trEl.appendChild(thEl);
 
   // iterate over hours array horizontally
   for (var i = 0; i < hoursArray.length; i++){
@@ -202,6 +202,8 @@ function handleSubmit(e) {
   newStore.calcCustomers();
   newStore.rows();
   newStore.hoursTotal();
+  // need to find a way to make these call within the main store contructor
+
   // remake totals row by calling footer function
   totalFooter();
 
@@ -210,6 +212,7 @@ function handleSubmit(e) {
   e.target.inputElementMinCust.value = null;
   e.target.inputElementMaxCust.value = null;
   e.target.inputElementAvgCookies.value = null;
+  // user-form.reset(); also works
 }
 // FORM CODE FORM CODE FORM CODE FORM CODE FORM CODE FORM CODE
 
