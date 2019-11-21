@@ -28,3 +28,14 @@ function handleSubmit(event) {
   console.log('age: ', age);
 }
 
+
+// //the function below helps you do the Create, Content, Append process in a much simpler way
+
+// function addElement(childElType, childContent, parentEl) {
+//   var childElement = document.createElement(childElType);
+//   childElement.textContent = childContent;
+//   parentEl.appendChild(childElement);
+//   return childElement
+// }
+// // example call of this function
+// addElement('th', 'Location', trEl);

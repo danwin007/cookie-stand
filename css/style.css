@@ -1,8 +1,37 @@
 table {
-  table-layout: fixed;
-  width: 100%;
+  width: 75%;
+  border: 1px solid black;
+  margin: auto;
+}
+
+th, td {
   border-collapse: collapse;
-  border: 4px solid purple;
+  border: 1px solid black;
+  padding: 7px;
+}
+
+td { 
+  font-family: 'Courier New', Courier, monospace;
+  color: blue;
+  text-align: right;
+}
+
+th {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: forestgreen;
+  background-color: lightgray;
+  vertical-align: bottom;
+}
+
+tr:hover {
+ background-color: wheat;
+}
+
+#storeData {
+  text-align: center;
+  margin: 2%;
+  font-size: large;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 input:invalid {
@@ -14,7 +43,8 @@ input:valid {
 }
 
 #header {
-  background-color: lightgrey;
+  background-color: lightslategrey;
+  width: 100%;
 }
 #storeIntro {
   text-align: center;
@@ -26,13 +56,44 @@ input:valid {
   margin: auto;
   padding-left: 10px;
   padding-right: 10px;
+  font-family: 'Cabin', sans-serif;
 }
 
 #nav {
   text-align: center;
+  padding-bottom: 2%;
 }
 
 #topLogo {
+  padding-top: 3%;
+  padding-bottom: 1%;
   text-align: center;
   font-size: 250%;
+  font-family: 'Cabin', sans-serif;
+  color: maroon;
+}
+
+#formDiv {
+  background-color: lightgoldenrodyellow;
+  width: 100%;
+}
+
+#formTitle {
+  margin: auto;
+  text-align: center;
+  font-size: Large;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#user-form {
+  margin: auto;
+  text-align: center;
+  font-size: medium;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+input {
+  width: 50%;
+  padding: 5px;
+  margin: 5px;
 }

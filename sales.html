@@ -6,23 +6,24 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
+    <title>Salmon Cookies Sales</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Cabin&display=swap" rel="stylesheet">
   </head>
   <body>
     <header>
         
             <div id="header">
       
-              <h1 id="topLogo">Salmon Cookies Inc</h1>
+              <h1 id="topLogo">Salmon Cookies Co</h1>
              <div id="nav">
                <ul class="navLi">
-                 <li class="navLi"><a href="/index.html">Home</a></li>
-                 <li class="navLi"><a href="/sales.html">Sales Center</a></li>
-                 <li class="navLi">Hours & Location</li>
+                 <li class="navLi"><a href="index.html">Home</a></li>
+                 <li class="navLi"><a href="sales.html">Sales Center</a></li>
+                 <li class="navLi"><a href="hoursLoc.html">Hours & Location</a></li>
                </ul>
               </div> 
             </div>
@@ -30,41 +31,49 @@
     </header>
     <main>
 
-      <h1>Store Data</h1>
+      <h1 id="storeData">Whatsamatta? It's Store Data!</h1>
       <table id="cookieTable">
       
       </table>
 <br/>
 <br/>
-      <h2>New Store Form</h2>
-      <form id="user-form">
-        <fieldset>
-          <label>Enter Store Location</label>
-          <input id="inputElementStoreLoc" type="text" placeholder="store location here..." required>
+<div id="formDiv">
 
-          <br/> 
-          <!-- remove the br and space via css once forms are done -->
-
-          <label>Enter Minimum Customer Value</label>
-          <input id="inputElementMinCust" type="number" placeholder="min cust value here..." required>
-
-          <br/>
-          
-          <label>Enter Maximum Customer Value</label>
-          <input id="inputElementMaxCust" type="number" placeholder="max cust value here..." required>
-
-          <br/>
-
-          <label>Enter Average Cookies Per Customer</label>
-          <input id="inputElementAvgCookies" type="number" placeholder="avg cookies per cust here..." required>
-
-          <br/>
-
-          <button value="submit">Submit</button>
-
-        </fieldset>
-      </form>
-    </main>
+  <h2 id="formTitle">New Store Form</h2>
+  <form id="user-form">
+    <br/>
+    <fieldset>
+      <label>Enter Store Location</label>
+      <br/>
+      <input id="inputElementStoreLoc" type="text" placeholder="store location here..." required>
+      
+      <br/> 
+      <!-- remove the br and space via css once forms are done -->
+      
+      <label>Enter Minimum Customer Value</label>
+      <br/>
+      <input id="inputElementMinCust" type="number" placeholder="min cust value here..." required>
+      
+      <br/>
+      
+      <label>Enter Maximum Customer Value</label>
+      <br/>
+      <input id="inputElementMaxCust" type="number" placeholder="max cust value here..." required>
+      
+      <br/>
+      
+      <label>Enter Average Cookies Per Customer</label>
+      <br/>
+      <input id="inputElementAvgCookies" type="number" placeholder="avg cookies per cust here..." required>
+      
+      <br/>
+      
+      <button value="submit">Submit</button>
+      
+    </fieldset>
+  </form>
+</div>
+</main>
     <footer>
 
     

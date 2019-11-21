@@ -1,0 +1,79 @@
+outerTop {
+  width: 100%;
+}
+h2 {
+  display: inline-block;
+  width: 20%;
+  padding: 20px;
+  text-align: center;
+  background-color: lightgrey;
+}
+
+.header {
+  margin: auto;
+}
+
+#scrollTop {
+  text-align: center;
+  background-color: lightgrey;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section {
+  margin: auto;
+  width: 70%;
+}
+
+#main {
+  width: 70%;
+  height: 200px;
+  background-color: lightgrey;
+  padding-right: 5px;
+  padding-left: 5px;
+  display:inline-block;
+}
+
+#sideMain {
+  width: 20%;
+  height: 200px;
+  margin-left: 15px;
+  background-color: lightgrey;
+  display: inline-block;
+}
+
+.scrollBot {
+  width: 100%;
+  text-align: center;
+}
+.scroll {
+  clear: none;
+  display: inline-block;
+}
+#scrollBotL{
+  background-color: lightgrey;
+  width: 45%
+}
+
+#scrollBotR {
+  background-color: lightgrey;
+  width: 45%;
+}
+
+h4 {
+  background-color: lightgrey;
+  text-align: center;
+  width: 10%;
+  display: inline-block;
+  height: 40px;
+}
+.outerBot{
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  clear: none;
+}
+.footer {
+  margin: auto;
+}
