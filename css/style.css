@@ -1,3 +1,134 @@
+.navLi {
+  display: inline;
+  margin: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: 'Cabin', sans-serif;
+}
+
+#nav {
+  text-align: center;
+  padding-bottom: 2%;
+}
+
+#topLogo {
+  padding-top: 3%;
+  padding-bottom: 1%;
+  text-align: center;
+  font-size: 250%;
+  font-family: 'Cabin', sans-serif;
+  color: maroon;
+}
+
+#storeData {
+  text-align: center;
+  margin: 2%;
+  font-size: large;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+#header {
+  background-color: lightslategrey;
+  width: 100%;
+}
+
+.storeIntro {
+  text-align: center;
+  padding-top: 30px;
+  font-size: large;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: blueviolet;
+}
+
+p, ul, li {
+  text-align: center;
+  font-size: medium;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin: 5px;
+}
+
+#famImage {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#fish1 {
+  float: left;
+}
+#fish2 {
+  float: right;
+}
+
+.fishImg {
+  transform: rotate(90deg);
+}
+
+.cookieImg {
+  display: block;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#cutter{
+  float: left;
+}
+ #fishcookie {
+   float:right;
+ }
+
+ #shirt {
+   float:left;
+ }
+
+ #shirtprint {
+   float:right;
+ }
+
+.swagDiv {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hours {
+float: left;
+padding-left: 15%;
+}
+
+.location {
+float:right;
+padding-right: 20%;
+}
+/* FORM AND TABLE CSS BELOW */
+
+#formDiv {
+  background-color: lightgoldenrodyellow;
+  width: 100%;
+}
+
+#formTitle {
+  margin: auto;
+  text-align: center;
+  font-size: Large;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#user-form {
+  margin: auto;
+  text-align: center;
+  font-size: medium;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+input {
+  width: 50%;
+  padding: 5px;
+  margin: 5px;
+}
+
 table {
   width: 75%;
   border: 1px solid black;
@@ -24,14 +155,7 @@ th {
 }
 
 tr:hover {
- background-color: wheat;
-}
-
-#storeData {
-  text-align: center;
-  margin: 2%;
-  font-size: large;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: wheat;
 }
 
 input:invalid {
@@ -40,60 +164,4 @@ input:invalid {
 
 input:valid {
   border: 2px solid black;
-}
-
-#header {
-  background-color: lightslategrey;
-  width: 100%;
-}
-#storeIntro {
-  text-align: center;
-  padding-top: 30px;
-}
-
-.navLi {
-  display: inline;
-  margin: auto;
-  padding-left: 10px;
-  padding-right: 10px;
-  font-family: 'Cabin', sans-serif;
-}
-
-#nav {
-  text-align: center;
-  padding-bottom: 2%;
-}
-
-#topLogo {
-  padding-top: 3%;
-  padding-bottom: 1%;
-  text-align: center;
-  font-size: 250%;
-  font-family: 'Cabin', sans-serif;
-  color: maroon;
-}
-
-#formDiv {
-  background-color: lightgoldenrodyellow;
-  width: 100%;
-}
-
-#formTitle {
-  margin: auto;
-  text-align: center;
-  font-size: Large;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-#user-form {
-  margin: auto;
-  text-align: center;
-  font-size: medium;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-input {
-  width: 50%;
-  padding: 5px;
-  margin: 5px;
 }
