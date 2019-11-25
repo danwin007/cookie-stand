@@ -1,3 +1,4 @@
+/* Custom Google Font  */
 .navLi {
   display: inline;
   margin: auto;
@@ -20,11 +21,13 @@
   color: maroon;
 }
 
+/* Serif Font  */
 #storeData {
   text-align: center;
   margin: 2%;
   font-size: large;
   font-family: Georgia, 'Times New Roman', Times, serif;
+  color: blueviolet;
 }
 
 
@@ -41,11 +44,17 @@
   color: blueviolet;
 }
 
+.bodyBg {
+  background-color: rgba(250, 128, 114, 0.495);
+}
+
+
 p, ul, li {
   text-align: center;
   font-size: medium;
   font-family: Georgia, 'Times New Roman', Times, serif;
   margin: 5px;
+  color: blueviolet;
 }
 
 #famImage {
@@ -147,6 +156,7 @@ td {
   text-align: right;
 }
 
+/* San Serif Font  */
 th {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: forestgreen;
